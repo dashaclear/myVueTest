@@ -1,65 +1,49 @@
 <template>
   <div class="content">
-    <router-link class="active" to="/Red" active-class="selected">Red</router-link>
-    <router-link class="active" to="/Blue" active-class="selected">blue</router-link>
-    <div class="show">
-      <router-view></router-view>
-      <!-- 路由显示组件的展示区 -->
-    </div>
+    <Category title="音乐">
+      <template slot-scope="{ music }">
+        <a href="#" scope="{music}">The World{{ music }}</a
+        ><br />
+        <a href="#">jiiiiiiiiiiiiiiii</a>
+        <h1>shaving</h1>
+      </template>
+    </Category>
+    <Category title="music" :listData="music" />
+    <Category title="file" :listData="film" />
+    <Category title="agefans" :listData="agefans" />
   </div>
 </template>
 
 <script>
-
+import Category from "./components/Category";
 export default {
   name: "App",
   components: {
-  
+    Category,
   },
   data() {
-    return {};
+    return {
+      // film: ["你的名字", "天气之子", "让子弹飞", "烟花"],
+      // agefans: [
+      //   "欢迎来到实力至上主义教室",
+      //   "overload",
+      //   "转生史莱姆",
+      //   "进击的巨人",
+      // ],
+    };
   },
 };
 </script>
 
-<style >
+<style>
 * {
   margin: 0;
   padding: 0;
 }
-html,
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
 .content {
   display: flex;
   justify-content: space-around;
   width: 60vw;
-  align-items: center;
-}
-
-.show {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-}
-.active {
-  display: inline-block;
-  width: 42px;
-  text-align: center;
-  height: 20px;
-  text-decoration: none;
-  color: whitesmoke;
-  background-color: rgb(116, 103, 103);
-  border: 1px solid transparent;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.active.selected {
-  background-color: aquamarine;
 }
 </style>

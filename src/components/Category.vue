@@ -3,6 +3,7 @@
     <h3>{{ title }}分类</h3>
     <!-- <slot></slot> -->
     <slot :music="music"></slot>
+    <!-- 这里是传过去的参数 -->
   </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   data() {
     return {
       music: ["最长的电影", "Love Stroy", "水星记", "大城小爱"],
-      one:'你好',
+      one: "你好",
     };
   },
 };
